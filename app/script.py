@@ -51,7 +51,7 @@ def process(text, keywords=None):
     counter = Counter(filtered_combinations)
     
 
-    with open('script_results.txt', 'w') as file:
+    with open('/tmp/script_results.txt', 'w') as file:
         for key, value in counter.most_common():
             file.write(f"{key} => {value}\n")
     
