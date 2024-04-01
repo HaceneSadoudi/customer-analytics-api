@@ -16,3 +16,7 @@ def process_text(text: str) -> dict:
 async def process_text_endpoint(item: TextItem):
     result = process_text(item.text)
     return result
+
+@app.get("/test/")
+def test():
+    return "Hello, world!"
