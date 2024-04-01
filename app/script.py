@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import nltk
 import os
-nltk.data.path.append(os.path.join(os.path.dirname(__file__), 'nltk_data'))
+nltk.data.path.append('/var/task/app/nltk_data')
 from collections import Counter
 from nltk.tokenize import word_tokenize
 from nltk import pos_tag
