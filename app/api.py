@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import Optional
-from script import main
+from app.script import main
 
 class TextItem(BaseModel):
     text: str

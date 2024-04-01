@@ -61,7 +61,7 @@ def process(text, stopwords, keywords=None):
 
 def main(text):
     keywords = []
-    with open('keywords.txt', 'r') as file:
+    with open('app/keywords.txt', 'r') as file:
         for line in file:
             keywords.append(line.strip('\n'))
     print("Starting...")
