@@ -4,9 +4,9 @@ from collections import Counter
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk import pos_tag
-nltk.download('averaged_perceptron_tagger')
+""" nltk.download('averaged_perceptron_tagger')
 nltk.download('punkt')
-nltk.download('stopwords')
+nltk.download('stopwords') """
 nltk.data.path.append("nltk_data")
 
 def generate_word_combinations(words, n=3):
