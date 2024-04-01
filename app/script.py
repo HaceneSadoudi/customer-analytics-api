@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import nltk
 import os
-nltk.data.path.append('/var/task/app/nltk_data')
+nltk.data.path.append('/var/task/nltk_data')
 from collections import Counter
 from nltk.tokenize import word_tokenize
 from nltk import pos_tag
@@ -31,7 +31,7 @@ def filter_combinations_by_keywords(all_combinations, keywords):
             filtered_combinations.append(comb)
     return filtered_combinations
 
-def process(text, keywords=None):
+def process(text, sw,  keywords=None):
     patterns = ["JJ-NN", "JJ-NN-NN", "RB-JJ-NN", "NN-IN-NN"]
     all_combinations = []
     filtered_combinations_by_keywords = []
@@ -67,7 +67,7 @@ def main(text):
             keywords.append(line.strip('\n'))
     print("Starting...")
     
-    
+    sw = set(nltk.corpus.stopwords.words('english')) 
 
-    return process(text, keywords)
+    return process(text, sw, keywords)
     
