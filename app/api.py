@@ -20,3 +20,7 @@ async def process_text_endpoint(item: TextItem):
 @app.get("/test/")
 def test():
     return "Hello, world!"
+
+@app.get("/", tags=["Root"])
+async def hello():
+    return { "hello": "you success deloy..." }
