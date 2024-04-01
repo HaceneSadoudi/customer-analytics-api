@@ -67,7 +67,7 @@ def main(text):
             keywords.append(line.strip('\n'))
     print("Starting...")
     
-    stopwords = set(stopwords.words('english'))  # Adding more stopwords as needed
+    stopwords_set = set(stopwords.words('english'))  # Adding more stopwords as needed
 
-    return process(text, stopwords, keywords)
+    return process(text, stopwords_set, keywords)
     
