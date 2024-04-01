@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 import nltk
 from collections import Counter
-nltk.data.path.append("nltk_data")
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk import pos_tag
+nltk.data.path.append("nltk_data")
+nltk.download('stopwords', download_dir='./nltk_data')
 """ nltk.download('averaged_perceptron_tagger')
 nltk.download('punkt')
 nltk.download('stopwords') """
