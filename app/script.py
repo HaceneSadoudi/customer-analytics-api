@@ -7,6 +7,7 @@ from nltk import pos_tag
 nltk.download('averaged_perceptron_tagger')
 nltk.download('punkt')
 nltk.download('stopwords')
+nltk.data.path.append("nltk_data")
 
 def generate_word_combinations(words, n=3):
     return [' '.join(words[i:i+n]) for i in range(len(words) - (n-1))]
