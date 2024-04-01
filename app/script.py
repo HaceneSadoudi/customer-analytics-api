@@ -5,7 +5,6 @@ nltk.data.path.append(os.path.join(os.path.dirname(__file__), 'nltk_data'))
 from collections import Counter
 from nltk.tokenize import word_tokenize
 from nltk import pos_tag
-nltk.download('stopwords', download_dir='./nltk_data')
 """ nltk.download('averaged_perceptron_tagger')
 nltk.download('punkt')
 nltk.download('stopwords') """
@@ -32,7 +31,7 @@ def filter_combinations_by_keywords(all_combinations, keywords):
             filtered_combinations.append(comb)
     return filtered_combinations
 
-def process(text, stopwords, keywords=None):
+def process(text, keywords=None):
     patterns = ["JJ-NN", "JJ-NN-NN", "RB-JJ-NN", "NN-IN-NN"]
     all_combinations = []
     filtered_combinations_by_keywords = []
@@ -68,7 +67,7 @@ def main(text):
             keywords.append(line.strip('\n'))
     print("Starting...")
     
-    stopwords = set(nltk.corpus.stopwords.words('english'))  # Adding more stopwords as needed
+    
 
-    return process(text, stopwords, keywords)
+    return process(text, keywords)
     
