@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 import nltk
 from collections import Counter
+nltk.data.path.append("nltk_data")
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk import pos_tag
 """ nltk.download('averaged_perceptron_tagger')
 nltk.download('punkt')
 nltk.download('stopwords') """
-nltk.data.path.append("nltk_data")
 
 def generate_word_combinations(words, n=3):
     return [' '.join(words[i:i+n]) for i in range(len(words) - (n-1))]
@@ -67,7 +67,7 @@ def main(text):
             keywords.append(line.strip('\n'))
     print("Starting...")
     
-    stopwords = set(nltk.corpus.stopwords.words('english'))  # Adding more stopwords as needed
+    stopwords = set(stopwords.words('english'))  # Adding more stopwords as needed
 
     return process(text, stopwords, keywords)
     
