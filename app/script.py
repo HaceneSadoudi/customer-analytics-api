@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 import nltk
+import os
+nltk.data.path.append(os.path.join(os.path.dirname(__file__), 'nltk_data'))
 from collections import Counter
-from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk import pos_tag
-nltk.data.path.append("nltk_data")
 nltk.download('stopwords', download_dir='./nltk_data')
 """ nltk.download('averaged_perceptron_tagger')
 nltk.download('punkt')
@@ -68,7 +68,7 @@ def main(text):
             keywords.append(line.strip('\n'))
     print("Starting...")
     
-    stopwords_set = set(stopwords.words('english'))  # Adding more stopwords as needed
+    stopwords = set(nltk.corpus.stopwords.words('english'))  # Adding more stopwords as needed
 
-    return process(text, stopwords_set, keywords)
+    return process(text, stopwords, keywords)
     
